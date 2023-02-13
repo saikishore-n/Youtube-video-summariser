@@ -1,0 +1,11 @@
+{
+    "name": "Youtube video summary",
+    "description": "This is an extension that uses AI to get the summary of a video",
+    "version":"1.0",
+    "manifest_version":3,
+    "permissions": ["activeTab","scripting"],
+    "host_permissions": ["https://*.youtube.com/*"],
+    "action": {
+        "default_popup":"popup.html"
+    }
+}
