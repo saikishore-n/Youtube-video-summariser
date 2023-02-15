@@ -17,7 +17,7 @@ function renderSummary(){
                 return;
             }
             n_tokens = transcript_text.split(" ").length;
-            if(n_tokens<6000){
+            if(n_tokens<7000){
                 transcript_text = cleanTranscript(transcript_text);
                 summarize({
                     "inputs": transcript_text,
@@ -42,7 +42,10 @@ function renderSummary(){
                 })
                 .then(() => toggleLoading(false));
             } else{
-                document.querySelector("#summary").innerText = "Transcript is too long to summarize";
+                const summaryP = document.createElement("p");
+                summaryP.id = "summary";
+                summaryP.innerText = "Transcript is too long to summarize";
+                document.querySelector(".container").appendChild(summaryP);
                 toggleLoading(false);
             }
         });
